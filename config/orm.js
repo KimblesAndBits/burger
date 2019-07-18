@@ -10,9 +10,9 @@ var orm = {
   },
 
   insertOne: function(burgerName) {
-    var queryString = "INSERT INTO burger SET";
+    var queryString = "INSERT INTO burger SET ?";
     connection.query(queryString, {
-        name: burgerName
+        burger_name: burgerName
     }, (err, data) => {
         if (err) throw err;
         return(data);

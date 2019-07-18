@@ -5,11 +5,11 @@ var router = express.Router();
 
 router.get('/', (req, res) => {
     burger.findBurgers(data => {
-    var hbsObject = {
-        burgers: data
-    };
-    res.render("index", hbsObject);
-});
+        var hbsObject = {
+            burgers: data
+        };
+        res.render("index", hbsObject);
+    });
 });
 
 router.put('/api/update/:id', (req, res) => {
@@ -18,8 +18,8 @@ router.put('/api/update/:id', (req, res) => {
     res.json(false);
 });
 
-router.post('/api/insert', (req, res) => {
-    var burgerName = req.body;
+router.post('/api/insert/:burgerName', (req, res) => {
+    var burgerName = req.params.burgerName;
     burger.insertBurger(burgerName);
     res.json(false);
 });

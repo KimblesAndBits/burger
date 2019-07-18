@@ -9,15 +9,15 @@ $(function () {
             }
         );
     });
-});
-$(".eat-burger").on("click", function (event) {
-    $.ajax("/api/cats", {
-        type: "POST",
-        data: newCat
-    }).then(
-        function () {
-            console.log("created new cat");
-            location.reload();
-        }
-    );
+    $("#submit-button").on("click", function (event) {
+        var newBurger = $("#user-burger").val().trim();
+        $("#user-burger").val("");
+        $.ajax(`/api/insert/${newBurger}`, {
+            type: "POST"
+        }).then(
+            function () {
+                location.reload();
+            }
+        );
+    });
 });
