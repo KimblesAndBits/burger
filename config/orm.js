@@ -1,11 +1,11 @@
 var connection = require("../config/connection.js");
 
 var orm = {
-  selectAll: function(column, value) {
-    var queryString = "SELECT * FROM burger";
-    connection.query(queryString,(err, data) => {
+  selectAll: function(cb) {
+    var queryString = "SELECT * FROM burger;";
+    connection.query(queryString, (err, data) => {
       if (err) throw err;
-      return data;
+      cb(data);
     });
   },
 
@@ -20,7 +20,7 @@ var orm = {
   },
 
   updateOne: function(burgerName) {
-    var queryString = "UPDATE burger set ?? WHERE ?";
+    var queryString = "UPDATE burger set ?? WHERE ?;";
     connection.query(queryString,
         {
             devoured: true
