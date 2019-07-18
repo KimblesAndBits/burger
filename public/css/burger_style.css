@@ -15,6 +15,11 @@ ul {
     list-style: none;
 }
 
+li {
+    background: #FF8000;
+    border: 1px solid #FF7000;
+}
+
 .fresh{
     text-align: right;
 }
