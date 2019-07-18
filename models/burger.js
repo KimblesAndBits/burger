@@ -1,14 +1,14 @@
 orm = require("../config/orm");
 module.exports = function () {
     function updateBurger(burgerName) {
-        orm.updateOne(burgerName);
+        return orm.updateOne(burgerName);
     };
 
     function insertBurger(burgerName) {
-        orm.insertOne(burgerName);
+        return orm.insertOne(burgerName);
     };
 
     function findBurgers() {
-        orm.selectAll();
+        return orm.selectAll();
     };
 }
