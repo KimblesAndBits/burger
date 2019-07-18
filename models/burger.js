@@ -1,11 +1,11 @@
 orm = require("../config/orm");
 burger = {
-    updateBurger: function (burgerName) {
-        return orm.updateOne(burgerName);
+    updateBurger: function (id) {
+        orm.updateOne(id);
     },
 
     insertBurger: function (burgerName) {
-        return orm.insertOne(burgerName);
+        orm.insertOne(burgerName);
     },
 
     findBurgers: function (cb) {

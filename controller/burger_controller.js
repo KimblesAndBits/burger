@@ -12,14 +12,16 @@ router.get('/', (req, res) => {
 });
 });
 
-router.post('/api/update', (req, res) => {
-    var burgerName = req.body;
-    burger.updateBurger(burgerName);
+router.put('/api/update/:id', (req, res) => {
+    var id = req.params.id;
+    burger.updateBurger(id);
+    res.json(false);
 });
 
-router.put('/api/insert', (req, res) => {
+router.post('/api/insert', (req, res) => {
     var burgerName = req.body;
     burger.insertBurger(burgerName);
+    res.json(false);
 });
 
 module.exports = router;

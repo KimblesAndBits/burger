@@ -1,16 +1,16 @@
 <h1>Eat-Da-Burger!</h1>
 
-<img src="/images/burger.png">
 <div class="row">
     <div class-"col-md-6">
+        <img src="/images/burger.png">
         <form>
             <div class="form-group">
-                <label for="exampleInputEmail1">Your burger!</label>
+                <h3>Your burger!</h3>
                 <input type="text" class="form-control" id="user-burger" aria-describedby="new-burger"
                     placeholder="Enter burger name">
                 <small id="new-burger" class="form-text text-muted"></small>
             </div>
-            <button type="button" class="btn btn-info">Submit</button>
+            <button id="submit-button" type="button" class="btn btn-info">Submit</button>
         </form>
     </div>
 </div>
@@ -20,10 +20,10 @@
         <ul>
             {{#each burgers}}
             {{#unless devoured}}
-            <li>
+            <li class="fresh">
                 {{burger_name}}
 
-                <button class="btn btn-sm btn-warning" data-id="{{id}}" data-devoured="{{devoured}}">
+                <button class="btn btn-sm btn-danger eat-burger" data-id="{{id}}">
                     DEVOUR!
                 </button>
             </li>
@@ -36,9 +36,10 @@
         <ul id="devoured-burgers">
             {{#each burgers}}
             {{#if devoured}}
-            <li>
+            <li class="eaten">
                 {{id}} {{burger_name}}
             </li>
+            <br>
             {{/if}}
             {{/each}}
         </ul>
